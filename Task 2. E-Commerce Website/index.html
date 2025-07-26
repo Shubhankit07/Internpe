@@ -77,34 +77,137 @@
     </div>
     <div class="cart-overlay"></div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About Us</h3>
-                    <p>ShopEasy is your one-stop shop for all your needs. We offer quality products at affordable prices.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Email: info@shopeasy.com</p>
-                    <p>Phone: +1 234 567 890</p>
-                </div>
+    <!-- About Section -->
+<section class="about-section" id="about">
+    <div class="container">
+        <h2 class="section-title">About ShopEasy</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>Founded in 2023, ShopEasy began as a small startup with a big vision - to make online shopping effortless and enjoyable for everyone. Today, we're proud to serve thousands of customers worldwide with our curated selection of quality products.</p>
+                
+                <h3>Our Mission</h3>
+                <p>We believe in providing high-quality products at affordable prices, with exceptional customer service and fast, reliable shipping.</p>
+                
+                <h3>Our Team</h3>
+                <p>Our diverse team of e-commerce experts, tech enthusiasts, and customer service professionals work tirelessly to ensure your shopping experience is seamless.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 ShopEasy. All rights reserved.</p>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Our Team">
             </div>
         </div>
-    </footer>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><i class="fas fa-envelope"></i> info@shopeasy.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 E-Commerce Street, Digital City</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+   <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ShopEasy</h3>
+                <p>Your one-stop shop for quality products at affordable prices.</p>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to our newsletter</h4>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-section">
+    <h3>Customer Service</h3>
+    <ul class="service-links">
+        <li>
+            <a href="#" class="service-link" data-service="shipping">
+                <i class="fas fa-truck"></i> Shipping Policy
+            </a>
+        </li>
+        <li>
+            <a href="#" class="service-link" data-service="returns">
+                <i class="fas fa-exchange-alt"></i> Return Policy
+            </a>
+        </li>
+        <li>
+            <a href="#" class="service-link" data-service="faq">
+                <i class="fas fa-question-circle"></i> FAQ
+            </a>
+        </li>
+        <li>
+            <a href="#" class="service-link" data-service="size-guide">
+                <i class="fas fa-ruler-combined"></i> Size Guide
+            </a>
+        </li>
+        <li>
+            <a href="#" class="service-link" data-service="tracking">
+                <i class="fas fa-map-marker-alt"></i> Track Order
+            </a>
+        </li>
+    </ul>
+    <div class="service-info" id="serviceInfo"></div>
+</div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShopEasy. All rights reserved.</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script src="products.js"></script>
     <script src="script.js"></script>

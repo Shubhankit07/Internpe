@@ -278,3 +278,116 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 70, // Adjust for fixed header
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        }
+    });
+});
+
+// Contact form handling
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Here you would typically send this data to a server
+        // For demonstration, we'll just show an alert
+        alert(`Thank you, ${name}! Your message has been received. We'll contact you at ${email} soon.`);
+        
+        // Reset form
+        contactForm.reset();
+    });
+}
+
+
+// Newsletter form handling
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        alert(`Thank you for subscribing with ${email}! You'll receive our newsletter soon.`);
+        this.reset();
+    });
+}
+
+
+
+// Customer Service Information
+const serviceContent = {
+    shipping: {
+        title: "Shipping Policy",
+        content: "We offer free standard shipping on all orders over $50. Orders are processed within 1-2 business days and delivered within 3-5 business days. Express shipping options available at checkout."
+    },
+    returns: {
+        title: "Return Policy",
+        content: "Easy 30-day returns. Items must be unused with original tags. Return shipping is free for defective items. Refunds are processed within 3-5 business days after we receive your return."
+    },
+    faq: {
+        title: "Frequently Asked Questions",
+        content: "Q: How do I change my order? A: Contact us within 1 hour of placing your order. Q: Do you offer international shipping? A: Yes, to select countries with calculated rates at checkout."
+    },
+    "size-guide": {
+        title: "Size Guide",
+        content: "Our sizes run true to standard measurements. For clothing: XS (0-2), S (4-6), M (8-10), L (12-14), XL (16-18). Still unsure? Contact our sizing specialists for personalized recommendations."
+    },
+    tracking: {
+        title: "Order Tracking",
+        content: "Track your order by clicking the link in your shipping confirmation email. Having trouble? Contact us with your order number and we'll provide real-time updates on your shipment."
+    }
+};
+
+// Service link functionality
+document.querySelectorAll('.service-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const serviceType = this.dataset.service;
+        const serviceInfo = document.getElementById('serviceInfo');
+        
+        // Hide all other active service info
+        document.querySelectorAll('.service-info').forEach(info => {
+            info.classList.remove('active');
+        });
+        
+        // Set and show the clicked service info
+        serviceInfo.innerHTML = `
+            <h4>${serviceContent[serviceType].title}</h4>
+            <p>${serviceContent[serviceType].content}</p>
+            <a href="#contact" class="btn btn-small" style="margin-top: 10px; padding: 5px 10px; font-size: 0.8rem;">
+                Need more help?
+            </a>
+        `;
+        serviceInfo.classList.add('active');
+        
+        // Scroll to the info if on mobile
+        if (window.innerWidth < 768) {
+            serviceInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    });
+});
+
