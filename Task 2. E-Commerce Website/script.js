@@ -391,3 +391,24 @@ document.querySelectorAll('.service-link').forEach(link => {
     });
 });
 
+// Search functionality
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
+
+function searchProducts() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredProducts = products.filter(product => 
+        product.name.toLowerCase().includes(searchTerm) || 
+        product.description.toLowerCase().includes(searchTerm)
+    );
+    displayProducts(filteredProducts);
+}
+
+searchBtn.addEventListener('click', searchProducts);
+searchInput.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') searchProducts();
+});
+
+
+
+
