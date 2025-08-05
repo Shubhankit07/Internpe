@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Four Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Connect Four</h1>
+            <div class="game-info">
+                <div id="player-turn">
+                    <span class="player-red">Player 1</span>'s Turn
+                </div>
+                <button id="restart-btn"><i class="fas fa-redo"></i> Restart Game</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="game-board"></div>
+        </main>
+
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Game Over!</h2>
+            <p id="modal-message">Player 1 wins!</p>
+            <button id="modal-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
